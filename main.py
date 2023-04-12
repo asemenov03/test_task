@@ -19,8 +19,7 @@ while True:
 
         # Получаем информацию о ценах за последние 60 минут
         klines = client.futures_klines(symbol='ETHUSDT', interval=interval, limit=60)
-
-        # Извлечение цен из данных klines
+        
         prices = np.array([float(kline[4]) for kline in klines])
 
         price_change = (current_price - initial_price) / initial_price * 100
